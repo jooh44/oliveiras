@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Design Directions - Oliveiras Doces e Salgados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#FAF6F0',
+                        'brand-brown': '#4A3B32',
+                        'brand-pink': '#FFD6E0',
+                        'brand-green': '#D5E8D4',
+                        'brand-accent': '#CFA071'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #E5E5E5;
+        }
+
+        .mobile-frame {
+            width: 375px;
+            height: 812px;
+            background-color: #FAF6F0;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow-y: auto;
+            position: relative;
+            border: 8px solid #333;
+        }
+
+        .mobile-frame::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mobile-frame {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .thumb-target {
+            min-height: 44px;
+        }
+
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-reveal {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-brand-brown p-8">
+    <div class="max-w-7xl mx-auto flex flex-col items-center">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold mb-2">Direção Desenhada: Fluxo Calculadora Visual</h1>
+            <p class="text-sm opacity-80 max-w-md mx-auto">Tamanhos e Kits com fotos e <strong>Detalhamento
+                    Dinâmico</strong>.</p>
+        </header>
+
+        <div class="mobile-frame pb-8">
+            <!-- Nav -->
+            <div class="p-6 pb-2">
+                <span class="font-bold text-xl tracking-tight text-brand-brown">Oliveiras.</span>
+            </div>
+
+            <div class="px-6 mb-6">
+                <h1 class="text-2xl font-bold leading-tight mb-1">Monte sua festa perfeita.</h1>
+                <p class="text-xs opacity-70">Escolha o tamanho e o nível de decoração.</p>
+            </div>
+
+            <!-- 1. Tamanho (Size) Selection -->
+            <div class="mb-6">
+                <div class="px-6 mb-3 flex justify-between items-end">
+                    <h2 class="font-bold text-lg">1. Qual o tamanho?</h2>
+                </div>
+                <!-- Horizontal scroll for sizes -->
+                <div class="flex overflow-x-auto gap-4 px-6 hide-scroll snap-x">
+
+                    <!-- Size P -->
+                    <div class="min-w-[140px] snap-center flex flex-col opacity-40">
+                        <div
+                            class="aspect-square bg-gray-200 rounded-2xl mb-2 overflow-hidden border-2 border-transparent">
+                            <img src="https://images.unsplash.com/photo-1558364818-4dc567fe83e8?auto=format&fit=crop&q=80&w=300"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-bold text-center">Tamanho P</span>
+                        <span class="text-[10px] text-center opacity-80">15 pessoas</span>
+                    </div>
+
+                    <!-- Size M (Selected) -->
+                    <div class="min-w-[140px] snap-center flex flex-col">
+                        <div
+                            class="aspect-square bg-white rounded-2xl mb-2 overflow-hidden border-4 border-brand-brown shadow-md p-1 relative">
+                            <div
+                                class="absolute top-1 right-1 bg-brand-brown text-white text-[9px] px-2 py-0.5 rounded-full z-10 font-bold">
+                                Mais Vendido</div>
+                            <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=300"
+                                class="w-full h-full object-cover rounded-xl">
+                        </div>
+                        <span class="font-bold text-center text-brand-brown">Tamanho M</span>
+                        <span class="text-[10px] text-center opacity-80 text-brand-brown font-semibold">30
+                            pessoas</span>
+                    </div>
+
+                    <!-- Size G -->
+                    <div class="min-w-[140px] snap-center flex flex-col opacity-40">
+                        <div
+                            class="aspect-square bg-gray-200 rounded-2xl mb-2 overflow-hidden border-2 border-transparent">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8892bc952f?auto=format&fit=crop&q=80&w=300"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-bold text-center">Tamanho G</span>
+                        <span class="text-[10px] text-center opacity-80">50 pessoas</span>
+                    </div>
+                </div>
+
+                <!-- Size Details Disclosure -->
+                <div class="px-6 mt-4">
+                    <div class="bg-brand-brown/5 rounded-2xl p-4 border border-brand-brown/10 animate-reveal">
+                        <h3 class="text-xs font-bold uppercase tracking-wider mb-2 opacity-60">Incluso no Tamanho M:
+                        </h3>
+                        <ul class="grid grid-cols-2 gap-y-1 text-xs">
+                            <li class="flex items-center gap-1">🍰 2,5kg de Bolo</li>
+                            <li class="flex items-center gap-1">🥟 150 Salgados</li>
+                            <li class="flex items-center gap-1">🍬 100 Docinhos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Kit Decorativo Selection -->
+            <div class="mb-8 bg-white py-6 rounded-t-3xl shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.1)]">
+                <div class="px-6 mb-3">
+                    <h2 class="font-bold text-lg">2. Estilo de Decoração</h2>
+                </div>
+
+                <div class="flex overflow-x-auto gap-4 px-6 hide-scroll snap-x mb-4">
+                    <!-- Tradicional -->
+                    <div class="min-w-[200px] snap-center flex flex-col opacity-40">
+                        <div class="aspect-video bg-gray-200 rounded-2xl mb-2 overflow-hidden">
+                            <div
+                                class="w-full h-full bg-brand-pink/30 flex items-center justify-center text-xs opacity-50">
+                                [Foto Tradicional]</div>
+                        </div>
+                        <span class="font-bold">Tradicional</span>
+                        <span class="text-[10px] opacity-80 pb-2">O clássico garantido</span>
+                    </div>
+
+                    <!-- Premium (Selected) -->
+                    <div class="min-w-[200px] snap-center flex flex-col relative">
+                        <div
+                            class="absolute -top-3 left-4 bg-brand-accent text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-md z-10 shadow-brand-accent/30">
+                            Destaque</div>
+                        <div
+                            class="aspect-video bg-white rounded-2xl mb-2 overflow-hidden border-2 border-brand-accent shadow-sm p-1">
+                            <div
+                                class="w-full h-full bg-brand-accent/10 rounded-xl flex items-center justify-center relative overflow-hidden">
+                                <div
+                                    class="absolute top-0 bottom-0 left-1/2 w-0.5 bg-white shadow-sm z-10 shadow-black/20">
+                                </div>
+                                <div
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md z-10 shadow-black/20">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                        class="text-brand-accent">
+                                        <path d="M11 17l-5-5 5-5M13 17l5-5-5-5" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="text-xs opacity-50 font-bold px-2 text-center text-brand-brown leading-tight">Painel
+                                    Premium<br>Antes/Depois</span>
+                            </div>
+                        </div>
+                        <span class="font-bold text-brand-accent flex items-center gap-1">Kit Premium ✨</span>
+                        <span class="text-[10px] font-medium opacity-90 pb-2 text-brand-brown text-center">Transformação
+                            completa do tema</span>
+                    </div>
+                </div>
+
+                <!-- Kit Details Disclosure -->
+                <div class="px-6">
+                    <div class="bg-brand-accent/5 rounded-2xl p-4 border border-brand-accent/20 animate-reveal">
+                        <h3 class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Incluso no Kit
+                            Premium:</h3>
+                        <div class="space-y-3">
+                            <ul class="text-[11px] space-y-1.5 opacity-90">
+                                <li class="flex gap-2"><span>🖼️</span> <b>Painel/Banner:</b> Exclusividade em destaque
+                                </li>
+                                <li class="flex gap-2"><span>🎂</span> <b>Topo de Bolo:</b> Personagem customizado</li>
+                                <li class="flex gap-2"><span>🎁</span> <b>Lembrancinhas:</b> (Confirme no WhatsApp)</li>
+                                <li class="flex gap-2"><span>📷</span> <b>Fotos:</b> 2 Recordações impressas</li>
+                                <li class="flex gap-2"><span>🍬</span> <b>Personalização:</b> Topos e forminhas de doces
+                                </li>
+                            </ul>
+
+                            <!-- Disclaimer text -->
+                            <div class="pt-2 border-t border-brand-accent/20">
+                                <p class="text-[10px] italic text-brand-accent leading-tight font-medium">
+                                    "Toda a decoração é personalizada com seu filho como protagonista."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Context & Checkout -->
+            <div class="px-6 mb-8">
+                <div class="bg-brand-brown text-white p-5 rounded-3xl shadow-xl relative overflow-hidden">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm opacity-80">Total Estimado</span>
+                        <span class="text-2xl font-black">R$ 450</span>
+                    </div>
+                    <p class="text-[11px] opacity-70 mb-5 leading-tight">Kit M (30 pessoas) + Decoração Premium IA.</p>
+
+                    <button
+                        class="w-full thumb-target bg-brand-green text-brand-brown rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                        </svg>
+                        Fazer o pedido
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfólio Gallery -->
+            <div class="px-6 mb-8 mt-4 border-t border-brand-brown/10 pt-4">
+                <h2 class="font-bold text-lg mb-4">Portfólio Real</h2>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-gray-200 aspect-square rounded-2xl overflow-hidden shadow-sm"><img
+                            src="https://images.unsplash.com/photo-1530103862676-de8892bc952f?auto=format&fit=crop&q=80&w=300"
+                            class="w-full h-full object-cover"></div>
+                    <div class="bg-gray-200 aspect-square rounded-2xl overflow-hidden shadow-sm"><img
+                            src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=300"
+                            class="w-full h-full object-cover"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
