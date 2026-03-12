@@ -1,36 +1,6 @@
-# Kit Festa - Oliveiras Doces e Salgados - Ideias de Kit
+# Kit Festa - Oliveiras Doces e Salgados
 
-## Kits Decorados
-
-### Kit Decorado Básico
-
-- Bolos
-- Salgados
-- Docinhos
-- Topo de bolo personalizado
-
-### Kit Decorado Tradicional
-
-- Bolos
-- Salgados
-- Docinhos
-- Topo de bolo personalizado
-- Lembrançinhas (a definir quantidade)
-- Recordação - 2 Fotos impressas em papel fotográfico do aniversariante
-
-### Kit Decorado Premium
-
-- Bolos
-- Salgados
-- Docinhos
-- Topo de bolo personalizado
-- Lembrançinhas (a definir quantidade)
-- Recordação - 2 Fotos impressas em papel fotográfico do aniversariante
-- Topo de doces personalizado (definir quantidade)
-- Forminhas de doces personalizadas (definir quantidade)
-- 1 Painel/Banner personalizado
-
-## Tamanho dos Kits (escolher em conjunto)
+## Etapa 1: Escolha o Tamanho
 
 ### Kit P (10 a 15 pessoas)
 
@@ -49,3 +19,42 @@
 - 3,5 kg de bolo
 - 300 unidades de salgados
 - 150 unidades de docinhos
+
+---
+
+## Etapa 2: Escolha a Decoração
+
+### Kit Decorado Básico
+
+- Bolos
+- Salgados
+- Docinhos
+- **Topo de bolo personalizado**
+
+### Kit Decorado Tradicional
+
+- Bolos
+- Salgados
+- Docinhos
+- **Topo de bolo personalizado**
+- **Lembrancinhas personalizadas** (quantidade a definir)
+- **Recordação:** 2 Fotos impressas em papel fotográfico do aniversariante
+
+### Kit Decorado Premium
+
+- Bolos
+- Salgados
+- Docinhos
+- **Topo de bolo personalizado**
+- **Lembrancinhas personalizadas** (quantidade a definir)
+- **Recordação:** 2 Fotos impressas em papel fotográfico do aniversariante
+- **Topo de doces personalizado**
+- **Forminhas de doces personalizadas**
+- **1 Painel/Banner personalizado**
+
+---
+
+## Observações
+
+- Os valores finais serão calculados após a seleção de ambos os componentes.
+- A personalização Premium utiliza IA para incluir fotos do aniversariante nos itens.

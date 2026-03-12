@@ -48,20 +48,27 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(0.99 0.01 60); /* Creme base-ish */
   --foreground: oklch(0.145 0 0);
+  
+  /* Brand Colors */
+  --brand-cream: #FAF6F0;
+  --brand-pink: #FFD6E0;
+  --brand-green: #D5E8D4;
+  --brand-brown: #4A3B32;
+
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --primary: var(--brand-brown);
+  --primary-foreground: var(--brand-cream);
+  --secondary: var(--brand-pink);
+  --secondary-foreground: var(--brand-brown);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: var(--brand-green);
+  --accent-foreground: var(--brand-brown);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -126,4 +133,28 @@
   html {
     @apply font-sans;
   }
+}
+@layer utilities {
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: fadeIn 0.4s ease-out forwards;
 }
