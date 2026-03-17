@@ -4,7 +4,6 @@ import { useState } from "react";
 import { KitSize, DecorationTier } from "@/config/products";
 import { CalculatorSelectors } from "@/components/calculator/selectors";
 import { PriceCard } from "@/components/calculator/price-card";
-import Image from "next/image";
 
 export default function Home() {
   const [size, setSize] = useState<KitSize>("M");
@@ -40,31 +39,6 @@ export default function Home() {
         theme={theme}
         onThemeChange={setTheme}
       />
-
-      {/* Portfolio Compacto */}
-      <section className="px-6 pb-32 pt-8 border-t border-[var(--brand-brown)]/10">
-        <h2 className="font-bold text-lg mb-4 text-[var(--brand-brown)]">Trabalhos Recentes</h2>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="aspect-square bg-white rounded-3xl overflow-hidden shadow-sm border border-[var(--brand-brown)]/5 ring-4 ring-[var(--brand-pink)]/10">
-            <Image
-              src="/oliveiras_hero_mockup.webp"
-              alt="Kit Festas"
-              width={300}
-              height={300}
-              className="object-cover h-full w-full"
-            />
-          </div>
-          <div className="aspect-square bg-white rounded-3xl overflow-hidden shadow-sm border border-[var(--brand-brown)]/5 ring-4 ring-[var(--brand-green)]/10">
-            <Image
-              src="/oliveiras_gallery_item_1.webp"
-              alt="Personalização IA"
-              width={300}
-              height={300}
-              className="object-cover h-full w-full"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Footer Minimalista */}
       <footer className="absolute bottom-12 left-0 right-0 py-8 px-6 text-center opacity-30">

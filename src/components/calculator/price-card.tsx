@@ -43,9 +43,7 @@ export function PriceCard({ size, tier, theme, onThemeChange }: PriceCardProps) 
             });
         }
 
-        message += `\n───────────────────\n`;
-        message += `*VALOR MÉDIO ESTIMADO: R$ ${totalPrice}*\n`;
-        message += `───────────────────\n\n`;
+        message += `\n───────────────────\n\n`;
 
         if (tier === 'Premium') {
             message += `_O cliente tem interesse nas fotos personalizadas e painel!_`;
@@ -73,21 +71,6 @@ export function PriceCard({ size, tier, theme, onThemeChange }: PriceCardProps) 
                         className="w-full h-12 bg-white/10 border border-white/10 rounded-2xl px-5 text-sm font-bold placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-[var(--brand-pink)]/50 transition-all"
                     />
                 </div>
-
-                <div className="flex justify-between items-center mb-2">
-                    <span className="text-lg font-bold opacity-80">Valor médio do pedido</span>
-                    <div className="flex items-baseline gap-1">
-                        <span className="text-base opacity-60 font-black">R$</span>
-                        <span className="text-5xl font-black tracking-tighter">{totalPrice}</span>
-                    </div>
-                </div>
-
-                <p className="text-base opacity-70 mb-8 leading-snug font-bold italic text-white/80">
-                    {tier === 'Nenhuma'
-                        ? `Kit ${size} • Apenas Comida`
-                        : `Kit ${size} + Decoração ${tier}`
-                    }
-                </p>
 
                 <div className="space-y-4">
                     <Button

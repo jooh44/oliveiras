@@ -50,13 +50,16 @@ export function CalculatorSelectors({
                 {currentFood && (
                     <div className="mt-4 animate-reveal">
                         <div className="bg-white rounded-[32px] overflow-hidden border border-zinc-100 shadow-sm">
-                            {/* Landscape Image */}
-                            <div className="aspect-[16/9] w-full bg-zinc-100 relative">
-                                <img
-                                    src={`/kit_festa_${selectedSize.toLowerCase()}.png`}
-                                    alt={`Kit ${selectedSize}`}
-                                    className="w-full h-full object-cover"
-                                />
+                            {/* Kit Icon Banner */}
+                            <div className="aspect-[16/9] w-full bg-[var(--brand-cream)] relative flex items-center justify-center">
+                                <div className="flex flex-col items-center gap-2">
+                                    <span className="text-6xl select-none">
+                                        {selectedSize === 'P' ? '🧁' : selectedSize === 'M' ? '🎂' : '🎊'}
+                                    </span>
+                                    <span className="text-xs font-black uppercase tracking-widest text-[var(--brand-brown)]/40">
+                                        Kit {selectedSize === 'P' ? 'Pequeno' : selectedSize === 'M' ? 'Médio' : 'Grande'}
+                                    </span>
+                                </div>
                                 {selectedSize === 'M' && (
                                     <div className="absolute top-4 right-4 bg-[var(--brand-brown)] text-white text-[10px] px-3 py-1 rounded-full font-black tracking-tight z-10 shadow-lg">
                                         MAIS VENDIDO
