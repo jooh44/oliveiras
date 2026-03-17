@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { KitSize, DecorationTier, FOOD_KITS, DECORATIONS } from "@/config/products";
 import { Button } from "@/components/ui/button";
 
@@ -14,36 +15,38 @@ export function PriceCard({ size, tier, theme, onThemeChange }: PriceCardProps) 
     const foodKit = FOOD_KITS.find((k) => k.size === size);
     const decoration = DECORATIONS.find((d) => d.tier === tier);
 
-    const foodPrice = foodKit?.price || 0;
-    const decorationPrice = tier === 'Nenhuma' ? 0 : (decoration?.prices[size] || 0);
-    const totalPrice = foodPrice + decorationPrice;
+    // Ref garante que o handler sempre lê o valor mais atual do tema
+    const themeRef = useRef(theme);
+    useEffect(() => { themeRef.current = theme; }, [theme]);
 
     const handleWhatsApp = () => {
-        let message = `*NOVO PEDIDO: KIT FESTA* 🎂✨\n`;
-        message += `───────────────────\n\n`;
-        message += `*1. DETALHES DO KIT*\n`;
-        message += `• *Tamanho:* ${size} (${foodKit?.capacity})\n`;
-        message += `• *Decoração:* ${tier === 'Nenhuma' ? 'Apenas Comida' : 'Kit Decorado ' + tier}\n`;
+        const currentTheme = themeRef.current;
 
-        if (theme.trim()) {
-            message += `• *Sugestão de Tema:* ${theme}\n`;
+        let message = `*NOVO PEDIDO: KIT FESTA*\n`;
+        message += `-------------------\n\n`;
+        message += `*1. DETALHES DO KIT*\n`;
+        message += `- *Tamanho:* ${size} (${foodKit?.capacity})\n`;
+        message += `- *Decoracao:* ${tier === 'Nenhuma' ? 'Apenas Comida' : 'Kit Decorado ' + tier}\n`;
+
+        if (currentTheme.trim()) {
+            message += `- *Sugestao de Tema:* ${currentTheme}\n`;
         } else {
-            message += `• *Sugestão de Tema:* _Não informado_\n`;
+            message += `- *Sugestao de Tema:* Nao informado\n`;
         }
 
-        message += `\n*2. CONTEÚDO (BASE)*\n`;
+        message += `\n*2. CONTEUDO (BASE)*\n`;
         foodKit?.items.forEach(item => {
-            message += `• ${item}\n`;
+            message += `- ${item}\n`;
         });
 
         if (tier !== 'Nenhuma' && decoration) {
-            message += `\n*3. EXTRAS DA DECORAÇÃO*\n`;
+            message += `\n*3. EXTRAS DA DECORACAO*\n`;
             decoration.benefits.forEach(benefit => {
-                message += `✅ ${benefit}\n`;
+                message += `- ${benefit}\n`;
             });
         }
 
-        message += `\n───────────────────\n\n`;
+        message += `\n-------------------\n\n`;
 
         if (tier === 'Premium') {
             message += `_O cliente tem interesse nas fotos personalizadas e painel!_`;
