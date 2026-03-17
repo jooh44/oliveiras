@@ -37,7 +37,7 @@ export const FOOD_KITS: FoodKit[] = [
         price: 300,
         items: [
             '2,5 kg de Bolo (sabores tradicionais)',
-            '150 unidades de Salgados',
+            '200 unidades de Salgados',
             '100 unidades de Docinhos'
         ]
     },
@@ -48,7 +48,7 @@ export const FOOD_KITS: FoodKit[] = [
         items: [
             '3,5 kg de Bolo (sabores tradicionais)',
             '300 unidades de Salgados',
-            '150 unidades de Docinhos'
+            '200 unidades de Docinhos'
         ]
     }
 ];
